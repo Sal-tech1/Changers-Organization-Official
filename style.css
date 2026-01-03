@@ -132,7 +132,7 @@ header {
     padding: 12px 30px;
     border-radius: 5px;
     font-weight: bold;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 .btn-primary {
@@ -632,5 +632,17 @@ footer {
 
     .project-image {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... existing code ... */
+
+    /* Add this to make buttons stack nicely */
+    .hero-btns .btn {
+        display: block;       /* Forces them to be on separate lines */
+        width: 80%;           /* Makes them 80% of the screen width */
+        margin: 15px auto;    /* Adds 15px space top/bottom and centers them */
+        text-align: center;
     }
 }
