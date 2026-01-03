@@ -12,7 +12,7 @@
     <header>
         <div class="container navbar">
             <div class="logo-area">
-                <img src="images/changers-logo.jpg" alt="Changers Organization Logo" class="logo-img">
+                <img src="changers-logo.jpg" alt="Changers Organization Logo" class="logo-img">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -93,6 +93,84 @@
                     </div>
                 </div>
 
+				<div class="donation-box">
+    <h3>Donate via M-Pesa</h3>
+    <p>Send your support to:</p>
+    
+    <div class="copy-container" onclick="copyNumber()">
+        <span id="mpesa-number">0718909919</span>
+        <i class="fas fa-copy"></i>
+        <span class="tooltip" id="copy-tooltip">Click to Copy</span>
+    </div>
+</div>
+
+<script>
+    function copyNumber() {
+        // 1. Get the number
+        const number = document.getElementById("mpesa-number").innerText;
+        
+        // 2. Copy to clipboard
+        navigator.clipboard.writeText(number).then(() => {
+            // 3. Show "Copied!" message
+            const tooltip = document.getElementById("copy-tooltip");
+            tooltip.innerText = "Copied!";
+            tooltip.style.backgroundColor = "#28a745"; // Green color
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                tooltip.innerText = "Click to Copy";
+                tooltip.style.backgroundColor = "#333";
+            }, 2000);
+        });
+    }
+</script>
+
+<style>
+    /* Add this to your style.css or inside <style> tags */
+    .donation-box {
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #f9f9f9;
+    }
+    .copy-container {
+        display: inline-block;
+        background: #fff;
+        border: 2px dashed #00d233; /* Safaricom Green */
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .copy-container:hover {
+        background: #e6ffea;
+    }
+    .tooltip {
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+    .copy-container:hover .tooltip {
+        opacity: 1; /* Show on hover */
+    }
+</style>
+
+
+				
                 <div class="payment-card">
                     <div class="card-header">
                         <i class="fas fa-university fa-3x"></i>
@@ -187,3 +265,4 @@
 </body>
 
 </html>
+
