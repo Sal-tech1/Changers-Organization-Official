@@ -44,12 +44,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px; /* Changed from height to min-height so it can grow on mobile */
-    flex-wrap: wrap;  /* Allows the menu to drop down on mobile */
+    min-height: 100px; /* FIX: Increased slightly to fit the bigger logo */
+    flex-wrap: wrap; 
 }
 
+/* FIX 1: Made Logo Bigger */
 .logo-img {
-    height: 60px;
+    height: 85px; /* Increased from 60px to 85px */
     width: auto;
 }
 
@@ -70,12 +71,12 @@ header {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #008B8B; /* Teal from Logo Globe */
+    color: #008B8B; 
 }
 
 /* Donate Button in Nav */
 .btn-donate {
-    background-color: #E67E22; /* Orange from Changers text */
+    background-color: #E67E22; 
     color: white !important;
     padding: 10px 20px;
     border-radius: 25px;
@@ -95,8 +96,8 @@ header {
 
 /* --- HERO SECTION --- */
 .hero {
-    /* Ensure you have an image named 'hero-bg.jpg' in your images folder */
-    background: url('images/hero-bg.jpg') no-repeat center center/cover; 
+    /* FIX 2: Removed 'images/' from the path so the background loads */
+    background: url('hero-bg.jpg') no-repeat center center/cover; 
     height: 85vh;
     position: relative;
 }
@@ -257,7 +258,8 @@ footer {
 /* --- ABOUT PAGE STYLES --- */
 
 .page-header {
-    background: linear-gradient(rgba(0, 139, 139, 0.9), rgba(0, 139, 139, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    /* FIX: Removed 'images/' here too just in case you use this header on other pages */
+    background: linear-gradient(rgba(0, 139, 139, 0.9), rgba(0, 139, 139, 0.7)), url('hero-bg.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 60px 20px;
@@ -593,14 +595,14 @@ footer {
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background: #fff; /* Ensure menu has background */
+        background: #fff; 
         padding-bottom: 10px;
     }
 
     .navbar .nav-links.active {
         display: flex;
     }
-    
+
     .nav-links li {
         margin: 10px 0;
     }
@@ -627,7 +629,7 @@ footer {
     .project-row, .project-row.reverse {
         flex-direction: column; 
     }
-    
+
     .project-image {
         margin-bottom: 20px;
     }
