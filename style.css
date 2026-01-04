@@ -9,8 +9,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    /* Changed from flat grey to a very subtle mint-white for freshness */
-    background-color: #f8fcfc; 
+    /* FIX 1: Subtle Gradient Background (Mint to White) so it's never just "flat gray" */
+    background: linear-gradient(to bottom, #f0fcfc, #ffffff); 
 }
 
 a {
@@ -30,17 +30,17 @@ ul {
 }
 
 .section-padding {
-    padding: 70px 0; /* Slightly increased for better look */
+    padding: 70px 0;
 }
 
 /* --- HEADER & NAVIGATION --- */
 header {
     background: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Softer, richer shadow */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-top: 4px solid #008B8B; /* Adds a nice Teal line at the very top */
+    border-top: 5px solid #008B8B; /* Thicker Teal Line */
 }
 
 .navbar {
@@ -66,9 +66,8 @@ header {
 }
 
 .nav-links a {
-    font-weight: 700; /* Made slightly bolder */
+    font-weight: 700;
     color: #444;
-    font-size: 1rem;
     transition: color 0.3s;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -79,19 +78,18 @@ header {
     color: #008B8B; 
 }
 
-/* Donate Button in Nav - NOW VIBRANT */
+/* Donate Button */
 .btn-donate {
-    /* Gradient instead of flat orange */
     background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
     color: white !important;
     padding: 12px 25px;
     border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); /* Orange Glow */
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-donate:hover {
-    transform: translateY(-2px); /* Lifts up */
+    transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
 }
 
@@ -99,7 +97,7 @@ header {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #008B8B; /* Colored hamburger */
+    color: #008B8B;
 }
 
 /* --- HERO SECTION --- */
@@ -107,12 +105,10 @@ header {
     background: url('hero-bg.jpg') no-repeat center center/cover; 
     height: 85vh;
     position: relative;
-    /* Adds a colorful bottom border to the hero image */
     border-bottom: 8px solid #E67E22; 
 }
 
 .hero-overlay {
-    /* VIBRANT UPGRADE: Gradient instead of flat black */
     background: linear-gradient(to right, rgba(0, 50, 50, 0.9) 0%, rgba(0, 139, 139, 0.6) 100%);
     height: 100%;
     width: 100%;
@@ -142,9 +138,9 @@ header {
 .btn {
     display: inline-block;
     padding: 14px 35px;
-    border-radius: 50px; /* Rounder, modern buttons */
+    border-radius: 50px;
     font-weight: bold;
-    margin: 10px; /* FIX: Added margin so they don't touch on mobile */
+    margin: 10px;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -173,6 +169,16 @@ header {
     color: #008B8B; 
 }
 
+/* --- SECTIONS (The "More Color" Fix) --- */
+
+/* FIX 2: Changed bg-light from 'gray' to 'Warm Cream/Orange Tint' 
+   This creates a clear visual difference between sections. */
+.bg-light {
+    background-color: #fff9f0 !important; 
+    border-top: 1px solid rgba(230, 126, 34, 0.1);
+    border-bottom: 1px solid rgba(230, 126, 34, 0.1);
+}
+
 /* --- INTRO SECTION --- */
 .intro-grid {
     display: grid;
@@ -189,11 +195,10 @@ header {
     display: inline-block;
 }
 
-/* Adds a small orange underline to headings */
 .intro-text h2::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 60px;
     height: 4px;
     background: #E67E22;
     margin-top: 5px;
@@ -212,18 +217,19 @@ header {
     gap: 20px;
 }
 
+/* FIX 3: Added Color to White Cards */
 .stat-box {
     background: white;
     padding: 30px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border-top: 5px solid #008B8B; /* Thicker teal border */
+    border-top: 5px solid #008B8B; /* Teal Top Border */
     transition: transform 0.3s;
 }
 
 .stat-box:hover {
-    transform: translateY(-5px); /* Jumps up slightly on hover */
+    transform: translateY(-5px);
 }
 
 .stat-box i {
@@ -241,7 +247,6 @@ header {
 
 /* --- VISION BANNER --- */
 .vision-banner {
-    /* Gradient Background */
     background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
     color: white;
     text-align: center;
@@ -266,7 +271,7 @@ footer {
     background: #222;
     color: white;
     padding-top: 60px;
-    border-top: 6px solid #E67E22; /* Adds Orange line at the top of footer */
+    border-top: 6px solid #E67E22; 
 }
 
 .footer-content {
@@ -291,7 +296,7 @@ footer {
     font-size: 1.5rem;
     margin-right: 15px;
     color: white;
-    background: rgba(255,255,255,0.1); /* Circle background */
+    background: rgba(255,255,255,0.1); 
     width: 40px;
     height: 40px;
     display: inline-flex;
@@ -304,7 +309,7 @@ footer {
 .social-icons a:hover {
     background: #E67E22;
     color: white;
-    transform: rotate(360deg); /* Fun spin effect */
+    transform: rotate(360deg);
 }
 
 .footer-bottom {
@@ -329,10 +334,6 @@ footer {
     margin-bottom: 10px;
 }
 
-.bg-light {
-    background-color: #eaf8f8; /* Fresh Mint Tint instead of grey */
-}
-
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -345,7 +346,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
-    border-bottom: 5px solid #E67E22;
+    border-bottom: 5px solid #E67E22; /* Orange Bottom Border */
 }
 
 .icon-large {
@@ -373,7 +374,7 @@ footer {
 .roadmap-item {
     background: white;
     padding: 30px;
-    border-left: 5px solid #008B8B;
+    border-left: 5px solid #008B8B; /* Teal Left Accent */
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
@@ -396,6 +397,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
+    border-top: 4px solid #E67E22; /* Added color accent to team */
     transition: transform 0.3s;
 }
 
@@ -425,14 +427,13 @@ footer {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    /* Color Accent on the left */
-    border-left: 5px solid #E67E22; 
+    border-left: 5px solid #E67E22; /* Orange Accent Left */
 }
 
 .project-row.reverse {
     flex-direction: row-reverse;
     border-left: none;
-    border-right: 5px solid #008B8B; /* Teal accent on the right */
+    border-right: 5px solid #008B8B; /* Teal Accent Right */
 }
 
 .project-image {
@@ -459,13 +460,13 @@ footer {
     font-size: 1.1rem;
     margin-bottom: 15px;
     color: #555;
-    background: #fff8f0; /* Light orange background */
+    background: #fff8f0; /* Warm background for highlight */
     border-left: 4px solid #E67E22;
     padding: 15px;
 }
 
 .testimonial {
-    background: #eaf8f8; /* Light teal background */
+    background: #eaf8f8; 
     border-left: 4px solid #008B8B;
     padding: 20px;
     margin-top: 20px;
@@ -511,12 +512,12 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s;
-    border-bottom: 4px solid transparent; /* Hidden border */
+    /* FIX 4: Permanent Color Accent for Impact Cards */
+    border-top: 5px solid #E67E22; 
 }
 
 .impact-card:hover {
     transform: translateY(-10px);
-    border-bottom: 4px solid #E67E22; /* Appears on hover */
 }
 
 .impact-card i {
