@@ -1,20 +1,6 @@
 /* =========================================
-   1. VARIABLES & RESET (The Foundation)
+   1. CORE VISUALS & RESET
    ========================================= */
-:root {
-    /* Brand Colors extracted from your Logo */
-    --primary: #008B8B;       /* Dark Cyan/Teal */
-    --primary-dark: #006666;  /* Darker Teal for hover */
-    --secondary: #E67E22;     /* Vibrant Orange */
-    --secondary-dark: #D35400;/* Darker Orange */
-    
-    /* Neutrals */
-    --text-dark: #2c3e50;     /* Dark Blue-Grey (Softer than black) */
-    --text-light: #7f8c8d;    /* Medium Grey */
-    --bg-light: #f4fcfc;      /* Very faint mint/teal tint (Not boring white) */
-    --white: #ffffff;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -24,8 +10,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light); /* Subtle tint everywhere */
+    color: #333;
+    /* A very subtle tint, not harsh white */
+    background-color: #f8fcfc; 
 }
 
 a {
@@ -38,11 +25,6 @@ ul {
     list-style: none;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -50,33 +32,34 @@ img {
 }
 
 .section-padding {
-    padding: 80px 0; /* More breathing room */
+    padding: 70px 0;
 }
 
 /* =========================================
-   2. HEADER & NAVIGATION (Professional Look)
+   2. HEADER (Clean & Bold)
    ========================================= */
 header {
-    background: var(--white);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Softer, deeper shadow */
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 139, 139, 0.1); /* Subtle Teal Shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-top: 5px solid var(--primary); /* Adds a colorful top line */
+    border-bottom: 3px solid #008B8B; /* Artistic bottom line */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100px; /* Accommodates the bigger logo */
-    padding: 10px 20px;
+    min-height: 100px; /* Room for the big logo */
+    padding: 5px 20px;
 }
 
-/* FIX: Bigger Logo */
+/* FIX: Logo Size */
 .logo-img {
-    height: 90px; /* Nice and big */
+    height: 90px;
     width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -85,74 +68,58 @@ header {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 .nav-links a {
-    font-weight: 600;
-    color: var(--text-dark);
+    font-weight: 700;
+    color: #444;
     font-size: 1.05rem;
-    position: relative;
-}
-
-/* Cool Hover Effect for Links */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--secondary);
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--primary);
+    color: #008B8B;
 }
 
-/* Vibrant Donate Button */
+/* Vibrant Donate Button in Nav */
 .btn-donate {
-    background: linear-gradient(135deg, var(--secondary) 0%, #F39C12 100%);
+    background: linear-gradient(45deg, #E67E22, #F39C12); /* Orange Gradient */
     color: white !important;
-    padding: 12px 25px;
+    padding: 12px 28px;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); /* Orange glow */
-    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+    border: 2px solid white; /* Double border effect */
 }
 
 .btn-donate:hover {
-    transform: translateY(-2px); /* Lifts up slightly */
-    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     font-size: 1.8rem;
+    color: #008B8B;
     cursor: pointer;
-    color: var(--primary);
 }
 
 /* =========================================
-   3. HERO SECTION (Impactful & Colorful)
+   3. HERO SECTION (The "Artistic" Gradient)
    ========================================= */
 .hero {
-    /* FIX: Correct path to hero-bg.jpg */
+    /* FIX: Correct Path */
     background: url('hero-bg.jpg') no-repeat center center/cover;
-    height: 90vh; /* Taller for more impact */
+    height: 90vh;
     position: relative;
-    /* Adding a "Parallax" feel */
-    background-attachment: fixed;
+    border-bottom: 10px solid #E67E22; /* Orange accent at bottom */
 }
 
-/* Vibrant Overlay: Dark Teal Gradient instead of plain black */
 .hero-overlay {
-    background: linear-gradient(135deg, rgba(0, 50, 50, 0.85) 0%, rgba(0, 139, 139, 0.75) 100%);
+    /* This creates the artistic mood: Teal fading into the photo */
+    background: linear-gradient(to right, rgba(0, 50, 50, 0.9) 0%, rgba(0, 139, 139, 0.5) 100%);
     height: 100%;
     width: 100%;
     display: flex;
@@ -163,47 +130,54 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-bottom: 2px solid #E67E22;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 .hero-content p {
     font-size: 1.4rem;
-    max-width: 750px;
-    margin: 0 auto 40px auto;
+    max-width: 800px;
+    margin: 20px auto 40px auto;
     font-weight: 300;
-    opacity: 0.95;
 }
 
 /* =========================================
-   4. BUTTONS (The "Touch" Fix is here)
+   4. BUTTONS (Mobile Fix Included)
    ========================================= */
 .btn {
     display: inline-block;
     padding: 14px 35px;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1rem;
     letter-spacing: 1px;
-    margin: 10px; /* FIX: Space around buttons */
+    margin: 10px; /* FIX: Prevents buttons from touching on mobile */
     cursor: pointer;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
-    background-color: var(--secondary);
+    background-color: #E67E22;
     color: white;
-    border: 2px solid var(--secondary);
+    border: 2px solid #E67E22;
 }
 
 .btn-primary:hover {
     background-color: transparent;
-    border-color: white;
+    border-color: #E67E22;
+    color: #E67E22; /* Inverts color on hover */
+}
+
+/* Special white buttons for Hero */
+.hero-btns .btn-primary:hover {
     color: white;
+    border-color: white;
 }
 
 .btn-secondary {
@@ -214,222 +188,216 @@ header {
 
 .btn-secondary:hover {
     background-color: white;
-    color: var(--primary);
+    color: #008B8B;
 }
 
 /* =========================================
-   5. SECTIONS & TYPOGRAPHY
+   5. SECTIONS & CARDS (Structure & Color)
    ========================================= */
+
+/* Typography styling */
 h2 {
-    color: var(--primary);
+    color: #008B8B;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
-    margin-bottom: 20px;
 }
 
-/* Decorative underline for H2s */
+/* Artistic underline for Headers */
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 50%;
     height: 4px;
-    background: var(--secondary);
-    margin-top: 8px;
-    border-radius: 2px;
+    background: #E67E22;
+    margin-top: 5px;
 }
 
-.bg-light {
-    background-color: #eaf6f6; /* A richer teal tint for alternating sections */
-}
-
-/* Intro Section Styling */
 .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
 }
 
-.intro-text p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Stat Boxes - Making them Pop */
+/* Stat Boxes - The "Artistic" Structure */
 .intro-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 20px;
 }
 
 .stat-box {
     background: white;
-    padding: 35px 20px;
+    padding: 30px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 139, 139, 0.1); /* Teal shadow */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    /* The colorful top border you liked */
+    border-top: 5px solid #008B8B; 
     transition: transform 0.3s;
-    border-bottom: 5px solid var(--secondary);
+}
+
+.stat-box:nth-child(even) {
+    border-top-color: #E67E22; /* Alternating colors! */
 }
 
 .stat-box:hover {
-    transform: translateY(-10px); /* Jumps up on hover */
+    transform: translateY(-5px);
 }
 
 .stat-box i {
     font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 15px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 .stat-box h3 {
     font-size: 1.8rem;
-    color: var(--text-dark);
     font-weight: 800;
+    color: #008B8B;
 }
 
-/* Vision Banner */
+/* Vision Banner - Full Color */
 .vision-banner {
-    background: linear-gradient(135deg, var(--primary) 0%, #005f5f 100%);
+    background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
     color: white;
     text-align: center;
     padding: 80px 20px;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%); /* Artistic Angled Edges */
+    margin: 40px 0;
 }
 
-.vision-banner h2 {
-    color: white;
-    margin-bottom: 30px;
-}
-
-.vision-banner h2::after {
-    background: white; /* White underline on dark background */
-    margin: 10px auto;
-}
-
-.vision-banner p {
-    font-size: 1.6rem;
-    font-style: italic;
-    font-weight: 300;
-}
+.vision-banner h2 { color: white; }
+.vision-banner h2::after { background: white; margin: 5px auto; }
+.vision-banner p { font-size: 1.5rem; font-style: italic; }
 
 /* =========================================
-   6. PROJECTS & IMPACT CARDS
+   6. PROJECTS & IMPACT
    ========================================= */
+.section-padding.bg-light {
+    background-color: #eaf8f8; /* Light Teal Background */
+}
+
 .project-row {
     display: flex;
     align-items: center;
-    gap: 60px;
-    margin-bottom: 80px;
+    gap: 50px;
+    margin-bottom: 60px;
     background: white;
     padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #E67E22; /* Orange accent on left */
 }
 
 .project-row.reverse {
     flex-direction: row-reverse;
+    border-left: none;
+    border-right: 5px solid #008B8B; /* Teal accent on right */
 }
 
 .project-image img {
-    border-radius: 15px;
-    transition: transform 0.5s;
-}
-
-.project-image img:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
+    border-radius: 5px;
+    box-shadow: 5px 5px 0px #eee; /* Artistic offset shadow */
 }
 
 .highlight-text {
-    border-left: 5px solid var(--secondary);
-    padding-left: 20px;
-    background: #fff5eb; /* Light orange background */
+    background: #fff3e6;
     padding: 15px;
-    border-radius: 0 10px 10px 0;
-    color: var(--secondary-dark);
+    border-left: 4px solid #E67E22;
+    font-weight: 500;
+    color: #555;
 }
 
-/* Impact Grid (Icons) */
+/* Impact Cards with Icons */
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
 .impact-card {
     background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
+    padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s;
-    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-bottom: 4px solid transparent;
 }
 
 .impact-card:hover {
     transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 15px 30px rgba(0, 139, 139, 0.15);
+    border-bottom-color: #E67E22; /* Color appears on hover */
 }
 
 .impact-card i {
     font-size: 3rem;
-    color: var(--secondary);
+    color: #008B8B;
     margin-bottom: 20px;
-    background: #fff5eb;
-    padding: 20px;
-    border-radius: 50%;
 }
 
 /* =========================================
-   7. FOOTER (Professional Finish)
+   7. FOOTER (Dark & Professional)
    ========================================= */
 footer {
-    background: #1a252f; /* Dark Blue-Grey instead of pure black */
+    background: #222;
     color: white;
-    padding-top: 70px;
-    border-top: 5px solid var(--secondary);
+    padding-top: 60px;
+    border-top: 10px solid #008B8B;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
 }
 
 .footer-col h3 {
-    color: var(--secondary);
-    margin-bottom: 25px;
+    color: #E67E22;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
 }
 
-.footer-col h3::after {
-    display: none; /* Remove underline in footer */
+.footer-col a {
+    color: #ccc;
 }
-
-.footer-col p {
-    color: #bdc3c7;
+.footer-col a:hover {
+    color: #E67E22;
+    padding-left: 5px; /* Slight movement on hover */
 }
 
 .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    background: #333;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: background 0.3s;
 }
 
 .social-icons a:hover {
-    background: var(--secondary);
+    background: #E67E22;
     color: white;
 }
 
 .footer-bottom {
-    background: #10171e;
-    padding: 25px;
-    margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
 }
 
 /* =========================================
-   8. DONATE PAGE & PAYMENTS
+   8. DONATE PAGE STYLES (Clean & Trustworthy)
    ========================================= */
 .payment-grid {
     display: grid;
@@ -439,114 +407,75 @@ footer {
 
 .payment-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
-    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
 }
 
-.payment-card:hover {
-    transform: translateY(-10px);
-}
+.mpesa-card { border-top: 6px solid #48B43F; } /* Safaricom Green */
 
 .card-header {
-    background: #f8f9fa;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
     border-bottom: 1px solid #eee;
 }
 
-.mpesa-card .card-header {
-    background: #eaffea; /* Light green tint for M-Pesa */
-}
-
 .number-display {
-    background: #fdfdfd;
-    border: 2px dashed #ddd;
+    background: #f4f4f4;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin: 15px 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    font-weight: bold;
+    border: 1px dashed #ccc;
 }
 
 .number-display .digits {
-    font-family: 'Courier New', monospace;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--text-dark);
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #000;
 }
 
 /* =========================================
    9. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
-    /* Navbar Mobile */
+    /* Menu Logic */
     .navbar .nav-links {
-        display: none;
+        display: none; 
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 100%; /* Below header */
-        left: 0;
-        background: white;
+        text-align: center;
+        background: #fff;
         padding: 20px 0;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
+    .navbar .nav-links.active { display: flex; }
+    .nav-links li { margin: 15px 0; }
+    .hamburger { display: block; }
 
-    .navbar .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    /* Hero Fixes */
-    .hero-content h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-
-    /* FIX: Buttons Stacking */
-    .hero-btns {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
+    /* Hero Logic */
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    /* FIX: Buttons Stacking correctly */
     .hero-btns .btn {
+        display: block;
         width: 80%;
-        margin: 10px 0; /* Vertical spacing */
+        margin: 15px auto; /* More space, centered */
         text-align: center;
     }
 
-    /* Intro & Layout Fixes */
+    /* Layout Logic */
     .intro-grid, .intro-stats, .project-row, .project-row.reverse {
         grid-template-columns: 1fr;
         flex-direction: column;
     }
 
-    .stat-box {
-        margin-bottom: 20px;
-    }
-
-    .project-image {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .section-padding {
-        padding: 50px 0;
-    }
+    .project-image { margin-bottom: 20px; width: 100%; }
+    
+    /* Remove angled edges on mobile for space */
+    .vision-banner { clip-path: none; margin: 20px 0; }
 }
