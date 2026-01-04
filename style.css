@@ -1,6 +1,4 @@
-/* =========================================
-   1. CORE VISUALS & RESET
-   ========================================= */
+/* --- RESET & BASICS --- */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    /* A very subtle tint, not harsh white */
+    /* Changed from flat grey to a very subtle mint-white for freshness */
     background-color: #f8fcfc; 
 }
 
@@ -32,34 +30,30 @@ ul {
 }
 
 .section-padding {
-    padding: 70px 0;
+    padding: 70px 0; /* Slightly increased for better look */
 }
 
-/* =========================================
-   2. HEADER (Clean & Bold)
-   ========================================= */
+/* --- HEADER & NAVIGATION --- */
 header {
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 139, 139, 0.1); /* Subtle Teal Shadow */
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Softer, richer shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #008B8B; /* Artistic bottom line */
+    border-top: 4px solid #008B8B; /* Adds a nice Teal line at the very top */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100px; /* Room for the big logo */
-    padding: 5px 20px;
+    min-height: 100px; 
+    flex-wrap: wrap; 
 }
 
-/* FIX: Logo Size */
 .logo-img {
-    height: 90px;
+    height: 85px; 
     width: auto;
-    display: block;
 }
 
 .nav-links {
@@ -72,54 +66,54 @@ header {
 }
 
 .nav-links a {
-    font-weight: 700;
+    font-weight: 700; /* Made slightly bolder */
     color: #444;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    transition: color 0.3s;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #008B8B;
+    color: #008B8B; 
 }
 
-/* Vibrant Donate Button in Nav */
+/* Donate Button in Nav - NOW VIBRANT */
 .btn-donate {
-    background: linear-gradient(45deg, #E67E22, #F39C12); /* Orange Gradient */
+    /* Gradient instead of flat orange */
+    background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
     color: white !important;
-    padding: 12px 28px;
+    padding: 12px 25px;
     border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
-    border: 2px solid white; /* Double border effect */
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); /* Orange Glow */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-donate:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px); /* Lifts up */
     box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
 }
 
 .hamburger {
     display: none;
     font-size: 1.8rem;
-    color: #008B8B;
     cursor: pointer;
+    color: #008B8B; /* Colored hamburger */
 }
 
-/* =========================================
-   3. HERO SECTION (The "Artistic" Gradient)
-   ========================================= */
+/* --- HERO SECTION --- */
 .hero {
-    /* FIX: Correct Path */
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    height: 90vh;
+    background: url('hero-bg.jpg') no-repeat center center/cover; 
+    height: 85vh;
     position: relative;
-    border-bottom: 10px solid #E67E22; /* Orange accent at bottom */
+    /* Adds a colorful bottom border to the hero image */
+    border-bottom: 8px solid #E67E22; 
 }
 
 .hero-overlay {
-    /* This creates the artistic mood: Teal fading into the photo */
-    background: linear-gradient(to right, rgba(0, 50, 50, 0.9) 0%, rgba(0, 139, 139, 0.5) 100%);
+    /* VIBRANT UPGRADE: Gradient instead of flat black */
+    background: linear-gradient(to right, rgba(0, 50, 50, 0.9) 0%, rgba(0, 139, 139, 0.6) 100%);
     height: 100%;
     width: 100%;
     display: flex;
@@ -131,53 +125,36 @@ header {
 
 .hero-content h1 {
     font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    margin-bottom: 15px;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    border-bottom: 2px solid #E67E22;
-    display: inline-block;
-    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
-    font-size: 1.4rem;
-    max-width: 800px;
-    margin: 20px auto 40px auto;
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
     font-weight: 300;
 }
 
-/* =========================================
-   4. BUTTONS (Mobile Fix Included)
-   ========================================= */
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 14px 35px;
-    border-radius: 5px;
+    border-radius: 50px; /* Rounder, modern buttons */
     font-weight: bold;
-    font-size: 1rem;
+    margin: 10px; /* FIX: Added margin so they don't touch on mobile */
+    text-transform: uppercase;
+    font-size: 0.9rem;
     letter-spacing: 1px;
-    margin: 10px; /* FIX: Prevents buttons from touching on mobile */
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
-    background-color: #E67E22;
+    background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
     color: white;
-    border: 2px solid #E67E22;
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    border-color: #E67E22;
-    color: #E67E22; /* Inverts color on hover */
-}
-
-/* Special white buttons for Hero */
-.hero-btns .btn-primary:hover {
-    color: white;
-    border-color: white;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
 }
 
 .btn-secondary {
@@ -186,34 +163,17 @@ header {
     color: white;
 }
 
-.btn-secondary:hover {
-    background-color: white;
-    color: #008B8B;
+.btn-primary:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
 }
 
-/* =========================================
-   5. SECTIONS & CARDS (Structure & Color)
-   ========================================= */
-
-/* Typography styling */
-h2 {
-    color: #008B8B;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
+.btn-secondary:hover { 
+    background-color: white; 
+    color: #008B8B; 
 }
 
-/* Artistic underline for Headers */
-h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 4px;
-    background: #E67E22;
-    margin-top: 5px;
-}
-
+/* --- INTRO SECTION --- */
 .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -221,7 +181,31 @@ h2::after {
     align-items: center;
 }
 
-/* Stat Boxes - The "Artistic" Structure */
+.intro-text h2 {
+    color: #008B8B;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Adds a small orange underline to headings */
+.intro-text h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #E67E22;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
 .intro-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -232,177 +216,354 @@ h2::after {
     background: white;
     padding: 30px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    /* The colorful top border you liked */
-    border-top: 5px solid #008B8B; 
+    border-top: 5px solid #008B8B; /* Thicker teal border */
     transition: transform 0.3s;
 }
 
-.stat-box:nth-child(even) {
-    border-top-color: #E67E22; /* Alternating colors! */
-}
-
 .stat-box:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Jumps up slightly on hover */
 }
 
 .stat-box i {
     font-size: 2.5rem;
-    color: #555;
-    margin-bottom: 10px;
+    color: #E67E22;
+    margin-bottom: 15px;
 }
 
 .stat-box h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333;
     font-weight: 800;
-    color: #008B8B;
 }
 
-/* Vision Banner - Full Color */
+/* --- VISION BANNER --- */
 .vision-banner {
+    /* Gradient Background */
     background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
     color: white;
     text-align: center;
     padding: 80px 20px;
-    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%); /* Artistic Angled Edges */
-    margin: 40px 0;
 }
 
-.vision-banner h2 { color: white; }
-.vision-banner h2::after { background: white; margin: 5px auto; }
-.vision-banner p { font-size: 1.5rem; font-style: italic; }
-
-/* =========================================
-   6. PROJECTS & IMPACT
-   ========================================= */
-.section-padding.bg-light {
-    background-color: #eaf8f8; /* Light Teal Background */
-}
-
-.project-row {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 60px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-left: 5px solid #E67E22; /* Orange accent on left */
-}
-
-.project-row.reverse {
-    flex-direction: row-reverse;
-    border-left: none;
-    border-right: 5px solid #008B8B; /* Teal accent on right */
-}
-
-.project-image img {
-    border-radius: 5px;
-    box-shadow: 5px 5px 0px #eee; /* Artistic offset shadow */
-}
-
-.highlight-text {
-    background: #fff3e6;
-    padding: 15px;
-    border-left: 4px solid #E67E22;
-    font-weight: 500;
-    color: #555;
-}
-
-/* Impact Cards with Icons */
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.impact-card {
-    background: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    border-bottom: 4px solid transparent;
-}
-
-.impact-card:hover {
-    transform: translateY(-10px);
-    border-bottom-color: #E67E22; /* Color appears on hover */
-}
-
-.impact-card i {
-    font-size: 3rem;
-    color: #008B8B;
+.vision-banner h2 {
     margin-bottom: 20px;
+    font-size: 2.5rem;
 }
 
-/* =========================================
-   7. FOOTER (Dark & Professional)
-   ========================================= */
+.vision-banner p {
+    font-size: 1.6rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* --- FOOTER --- */
 footer {
     background: #222;
     color: white;
     padding-top: 60px;
-    border-top: 10px solid #008B8B;
+    border-top: 6px solid #E67E22; /* Adds Orange line at the top of footer */
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    gap: 30px;
     padding-bottom: 40px;
 }
 
 .footer-col h3 {
-    color: #E67E22;
     margin-bottom: 20px;
-    font-size: 1.4rem;
+    color: #E67E22;
+    font-size: 1.3rem;
 }
 
-.footer-col a {
+.footer-col p {
+    margin-bottom: 10px;
     color: #ccc;
-}
-.footer-col a:hover {
-    color: #E67E22;
-    padding-left: 5px; /* Slight movement on hover */
 }
 
 .social-icons a {
     font-size: 1.5rem;
     margin-right: 15px;
-    background: #333;
-    padding: 10px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    color: white;
+    background: rgba(255,255,255,0.1); /* Circle background */
+    width: 40px;
+    height: 40px;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
 }
 
 .social-icons a:hover {
     background: #E67E22;
     color: white;
+    transform: rotate(360deg); /* Fun spin effect */
 }
 
 .footer-bottom {
     background: #111;
-    padding: 20px;
     text-align: center;
+    padding: 25px;
     font-size: 0.9rem;
-    color: #777;
+    color: #888;
 }
 
-/* =========================================
-   8. DONATE PAGE STYLES (Clean & Trustworthy)
-   ========================================= */
+/* --- ABOUT PAGE STYLES --- */
+
+.page-header {
+    background: linear-gradient(rgba(0, 139, 139, 0.9), rgba(0, 139, 139, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.bg-light {
+    background-color: #eaf8f8; /* Fresh Mint Tint instead of grey */
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.card-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 5px solid #E67E22;
+}
+
+.icon-large {
+    font-size: 3.5rem;
+    color: #008B8B;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #008B8B;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.roadmap-item {
+    background: white;
+    padding: 30px;
+    border-left: 5px solid #008B8B;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.roadmap-item h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-info h3 {
+    color: #008B8B;
+    margin-bottom: 5px;
+}
+
+.member-info span {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* --- PROJECTS PAGE STYLES --- */
+
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    /* Color Accent on the left */
+    border-left: 5px solid #E67E22; 
+}
+
+.project-row.reverse {
+    flex-direction: row-reverse;
+    border-left: none;
+    border-right: 5px solid #008B8B; /* Teal accent on the right */
+}
+
+.project-image {
+    flex: 1;
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h2 {
+    color: #008B8B;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+    background: #fff8f0; /* Light orange background */
+    border-left: 4px solid #E67E22;
+    padding: 15px;
+}
+
+.testimonial {
+    background: #eaf8f8; /* Light teal background */
+    border-left: 4px solid #008B8B;
+    padding: 20px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+    position: relative;
+    border-radius: 0 10px 10px 0;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    font-style: normal;
+}
+
+.partner-list {
+    margin-top: 15px;
+}
+
+.partner-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.partner-list i {
+    color: #28a745; 
+    margin-right: 10px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.impact-card {
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-bottom: 4px solid transparent; /* Hidden border */
+}
+
+.impact-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid #E67E22; /* Appears on hover */
+}
+
+.impact-card i {
+    font-size: 3rem;
+    color: #E67E22;
+    margin-bottom: 15px;
+}
+
+.impact-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-banner h2 {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.cta-banner p {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+/* --- DONATION PAGE STYLES --- */
+
+.icon-orange {
+    color: #E67E22;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.impact-item p {
+    font-size: 1.1rem;
+}
+
 .payment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-top: 30px;
 }
 
 .payment-card {
@@ -410,16 +571,47 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
     border: 1px solid #eee;
+    text-align: center;
 }
 
-.mpesa-card { border-top: 6px solid #48B43F; } /* Safaricom Green */
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
 .card-header {
-    background: #f9f9f9;
+    background: #f8f9fa;
     padding: 20px;
-    text-align: center;
     border-bottom: 1px solid #eee;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-logo {
+    max-height: 60px;
+    width: auto;
+}
+
+.card-header i {
+    color: #008B8B;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-body h4 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.mpesa-card {
+    border-top: 6px solid #48B43F; 
 }
 
 .number-display {
@@ -434,48 +626,96 @@ footer {
 }
 
 .number-display .digits {
+    color: #333;
     font-family: monospace;
     font-size: 1.2rem;
-    color: #000;
 }
 
-/* =========================================
-   9. MOBILE RESPONSIVENESS
-   ========================================= */
+.small-text {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 15px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.bank-details {
+    text-align: left;
+    margin-top: 15px;
+    list-style: none;
+}
+
+.bank-details li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.bank-details li strong {
+    color: #333;
+    margin-right: 5px;
+}
+
+.contact-highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #008B8B;
+    margin: 10px 0;
+}
+
+
+/* --- MOBILE RESPONSIVENESS (ALL SECTIONS) --- */
 @media (max-width: 768px) {
-    /* Menu Logic */
+    /* Navbar Logic */
     .navbar .nav-links {
         display: none; 
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background: #fff;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff; 
+        padding-bottom: 10px;
     }
-    .navbar .nav-links.active { display: flex; }
-    .nav-links li { margin: 15px 0; }
-    .hamburger { display: block; }
 
-    /* Hero Logic */
-    .hero-content h1 { font-size: 2.5rem; }
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Hero Text Sizing */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
     
     /* FIX: Buttons Stacking correctly */
     .hero-btns .btn {
-        display: block;
-        width: 80%;
-        margin: 15px auto; /* More space, centered */
+        display: block;       /* Forces them to be on separate lines */
+        width: 80%;           /* Makes them 80% of the screen width */
+        margin: 15px auto;    /* Adds 15px space top/bottom and centers them */
         text-align: center;
     }
 
-    /* Layout Logic */
-    .intro-grid, .intro-stats, .project-row, .project-row.reverse {
+    .intro-grid {
         grid-template-columns: 1fr;
-        flex-direction: column;
     }
 
-    .project-image { margin-bottom: 20px; width: 100%; }
-    
-    /* Remove angled edges on mobile for space */
-    .vision-banner { clip-path: none; margin: 20px 0; }
+    /* About Page Mobile */
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projects Page Mobile */
+    .project-row, .project-row.reverse {
+        flex-direction: column; 
+    }
+
+    .project-image {
+        margin-bottom: 20px;
+    }
 }
